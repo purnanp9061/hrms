@@ -9,7 +9,7 @@ services:
     depends_on:
       - backend
     networks:
-      - app-network
+      - hrms
 
   backend:
     image: purna0809/serverside
@@ -18,7 +18,7 @@ services:
     depends_on:
       - database
     networks:
-      - app-network
+      - hrms
 
   database:
     image: mysql:latest
@@ -28,9 +28,9 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - app-network
+      - hrms
 
 networks:
-  app-network:
+  hrms:
     driver: bridge
 ...
